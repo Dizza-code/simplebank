@@ -106,12 +106,12 @@ func TestListAllAccount(t *testing.T) {
 		createRandomAccount(t)
 	}
 
-	arg := ListManyParams{
+	arg := ListAccountsParams{
 		Limit:  5,
 		Offset: 5,
 	}
 
-	accounts, err := testQueries.ListMany(context.Background(), arg)
+	accounts, err := testQueries.ListAccounts(context.Background(), arg)
 	require.NoError(t, err)
 	require.Len(t, accounts, 5)
 
